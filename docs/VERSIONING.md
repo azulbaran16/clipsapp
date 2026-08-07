@@ -24,3 +24,11 @@ La versión se declara únicamente en `src/clipperkick/__init__.py`. Setuptools 
 6. La Action de release valida etiqueta, ejecuta pruebas, construye wheel y source distribution, y crea la GitHub Release.
 
 Si la etiqueta no coincide con el código o las pruebas fallan, no se publica la release. PyPI queda fuera de este flujo hasta que exista una necesidad explícita.
+
+## Flujo cotidiano de cambios
+
+1. Crear una rama corta desde `main`, por ejemplo `feature/nombre` o `fix/nombre`.
+2. Hacer commits enfocados y publicar la rama en GitHub.
+3. Abrir un pull request hacia `main` y resolver las conversaciones pendientes.
+4. Esperar a que `Required checks` termine correctamente y actualizar la rama si `main` avanzó.
+5. Fusionar mediante squash o rebase. No se permiten pushes directos, merge commits ni force-push sobre `main`.
