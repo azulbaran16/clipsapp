@@ -12,6 +12,7 @@ from clipperkick.engine import (  # noqa: E402
     formato_legible,
     formato_nombre,
 )
+from scripts.check_version import leer_version, validar_etiqueta  # noqa: E402
 
 
 class FormatoTests(unittest.TestCase):
@@ -49,6 +50,24 @@ class PicosTests(unittest.TestCase):
     def test_ignora_senal_plana_y_entrada_vacia(self):
         self.assertEqual(elegir_picos([-20.0] * 100, 6, 45), [])
         self.assertEqual(elegir_picos([], 6, 45), [])
+
+
+class VersionTests(unittest.TestCase):
+    def test_version_actual_es_semver(self):
+        self.assertEqual(leer_version(), "1.0.0")
+
+    def test_etiqueta_debe_coincidir(self):
+        self.assertEqual(validar_etiqueta("v1.0.0", "1.0.0"), "1.0.0")
+        with self.assertRaises(ValueError):
+            validar_etiqueta("v1.0.1", "1.0.0")
+
+    def test_pyproject_usa_una_fuente_dinamica(self):
+        contenido = Path("pyproject.toml").read_text("utf-8")
+        self.assertIn('dynamic = ["version"]', contenido)
+        self.assertNotIn('\nversion = "1.0.0"', contenido)
+        self.assertIn(
+            'version = {attr = "clipperkick.__version__"}', contenido
+        )
 
 
 if __name__ == "__main__":

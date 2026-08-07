@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clipperkick"
-version = "1.0.0"
+dynamic = ["version"]
 description = "Aplicación de escritorio para detectar momentos intensos y crear clips de directos."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -20,3 +20,6 @@ package-dir = {"" = "src"}
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "clipperkick.__version__"}

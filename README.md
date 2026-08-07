@@ -41,6 +41,10 @@ python -m compileall -q src ClipperKick.pyw
 
 La lógica de procesamiento está en `src/clipperkick/engine.py` y la interfaz en `src/clipperkick/ui.py`. Las decisiones de estructura se documentan en `docs/plans/`.
 
+## Versiones y contribuciones
+
+El proyecto usa [versionado semántico](docs/VERSIONING.md). Los cambios se integran mediante pull request y deben pasar el CI antes de llegar a `main`. Las novedades publicadas se registran en [CHANGELOG.md](CHANGELOG.md).
+
 ## Privacidad
 
 Los archivos locales se procesan en el equipo. Al usar un enlace, `yt-dlp` descarga temporalmente el VOD y la copia temporal se elimina al finalizar.
