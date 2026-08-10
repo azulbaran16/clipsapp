@@ -1,0 +1,292 @@
+{
+  "schema": 1,
+  "capturado_utc": "2026-08-10T15:59:22.168309+00:00",
+  "entorno": {
+    "sistema": "Windows-11-10.0.26200-SP0",
+    "python": "3.13.7",
+    "ffmpeg": "ffmpeg version 8.0-full_build-www.gyan.dev Copyright (c) 2000-2025 the FFmpeg developers"
+  },
+  "disponibilidad": [
+    {
+      "nombre": "qtmultimedia",
+      "disponible": true,
+      "version": "6.11.1",
+      "motivo": "",
+      "remedio": ""
+    },
+    {
+      "nombre": "libmpv",
+      "disponible": false,
+      "version": "",
+      "motivo": "No module named 'mpv'",
+      "remedio": "pip install python-mpv"
+    },
+    {
+      "nombre": "vlc",
+      "disponible": false,
+      "version": "",
+      "motivo": "No module named 'vlc'",
+      "remedio": "pip install python-vlc"
+    }
+  ],
+  "distribucion": {
+    "PySide6": {
+      "instalado": true,
+      "version": "6.11.1",
+      "archivos_contados": 74,
+      "bytes_instalados": 4997564
+    },
+    "PySide6_Addons": {
+      "instalado": true,
+      "version": "6.11.1",
+      "archivos_contados": 1321,
+      "bytes_instalados": 457980559
+    },
+    "PySide6_Essentials": {
+      "instalado": true,
+      "version": "6.11.1",
+      "archivos_contados": 2526,
+      "bytes_instalados": 214833048
+    },
+    "shiboken6": {
+      "instalado": true,
+      "version": "6.11.1",
+      "archivos_contados": 74,
+      "bytes_instalados": 3094414
+    },
+    "python-mpv": {
+      "instalado": false
+    },
+    "python-vlc": {
+      "instalado": false
+    }
+  },
+  "fixtures": {
+    "cfr": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000"
+        }
+      ],
+      "format": {
+        "duration": "4.000000"
+      },
+      "archivo": "cfr.mp4",
+      "bytes": 440707
+    },
+    "vfr": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "750/59",
+          "time_base": "1/15360"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000"
+        }
+      ],
+      "format": {
+        "duration": "3.933333"
+      },
+      "archivo": "vfr.mp4",
+      "bytes": 251144
+    },
+    "sync": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000"
+        }
+      ],
+      "format": {
+        "duration": "4.000000"
+      },
+      "archivo": "sync.mp4",
+      "bytes": 20186
+    },
+    "segmento-a": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      },
+      "archivo": "segmento-a.mp4",
+      "bytes": 27282
+    },
+    "segmento-b": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "h264",
+          "codec_type": "video",
+          "r_frame_rate": "30/1",
+          "avg_frame_rate": "30/1",
+          "time_base": "1/15360"
+        },
+        {
+          "index": 1,
+          "codec_name": "aac",
+          "codec_type": "audio",
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/48000"
+        }
+      ],
+      "format": {
+        "duration": "1.500000"
+      },
+      "archivo": "segmento-b.mp4",
+      "bytes": 27373
+    }
+  },
+  "metricas": {
+    "qtmultimedia": {
+      "seek_cfr": {
+        "estado": "medido",
+        "fixture": "cfr",
+        "carga_ms": 16.21,
+        "seek_a_progreso_ms": [
+          393.429,
+          55.388,
+          60.623
+        ],
+        "mediana_ms": 60.623,
+        "avance_requerido_ms": 20
+      },
+      "seek_vfr": {
+        "estado": "medido",
+        "fixture": "vfr",
+        "carga_ms": 10.773,
+        "seek_a_progreso_ms": [
+          237.009,
+          55.292,
+          60.861
+        ],
+        "mediana_ms": 60.861,
+        "avance_requerido_ms": 20
+      },
+      "fin_de_rango": {
+        "estado": "medido",
+        "rango_s": [
+          0.4,
+          1.4
+        ],
+        "pared_ms": 1212.632,
+        "exceso_observado_ms": 4.0
+      },
+      "playlist": {
+        "estado": "medido",
+        "duracion_primer_segmento_ms": 1200.0,
+        "cambio_observado_ms": 1391.016,
+        "exceso_sobre_duracion_ms": 191.016
+      },
+      "liberacion_handle": {
+        "estado": "medido",
+        "vaciar_playlist": {
+          "iteraciones": 5,
+          "renombrados": 5,
+          "latencias_ms": [
+            2.226,
+            1.849,
+            1.678,
+            1.832,
+            1.554
+          ],
+          "maximo_ms": 2.226
+        },
+        "liberar_backend": {
+          "iteraciones": 5,
+          "renombrados": 5,
+          "latencias_ms": [
+            2.262,
+            2.849,
+            1.908,
+            1.665,
+            1.696
+          ],
+          "maximo_ms": 2.849
+        }
+      },
+      "overlay_qt": {
+        "estado": "medido",
+        "superficie_montada": true,
+        "overlay_montado": true,
+        "medio_cargado": true,
+        "composicion_visual": "manual_requerida"
+      }
+    },
+    "libmpv": {
+      "estado": "no_medido_dependencia_ausente",
+      "detalle": "No module named 'mpv'"
+    },
+    "vlc": {
+      "estado": "no_medido_dependencia_ausente",
+      "detalle": "No module named 'vlc'"
+    }
+  },
+  "observacion_manual": {
+    "av_sync": "no_medido_automaticamente: verificar coincidencia perceptual entre patron y tono",
+    "overlay_visual": "no_medido_automaticamente: verificar video visible bajo OVERLAY T08",
+    "motivo": "Qt no expone un reloj de audio independiente ni captura portable de superficie acelerada"
+  },
+  "backend_elegido": "qtmultimedia"
+}

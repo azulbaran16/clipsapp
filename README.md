@@ -23,6 +23,18 @@ Después de instalar, puedes abrir `ClipperKick.pyw` con doble clic o ejecutar:
 clipperkick
 ```
 
+La carcasa PySide6 se instala de forma opcional durante la migración:
+
+```powershell
+python -m pip install -e ".[desktop]"
+clipsapp
+```
+
+También se puede abrir `ClipsApp.pyw` con doble clic. Esta entrada ofrece
+proyectos recientes, crear/abrir/cerrar proyecto, workspace y reproducción;
+`ClipperKick.pyw` y el comando `clipperkick` continúan disponibles con el flujo
+Tkinter original.
+
 ## Uso
 
 1. Elige una grabación local o pega el enlace de un VOD de Kick, Twitch o YouTube.
@@ -36,10 +48,12 @@ Los resultados se guardan por defecto en `outputs/`, que no forma parte del cód
 
 ```powershell
 python -m unittest discover -s tests -v
-python -m compileall -q src ClipperKick.pyw
+python -m compileall -q src ClipperKick.pyw ClipsApp.pyw scripts/playback_spike.py
 ```
 
 La lógica de procesamiento está en `src/clipperkick/engine.py` y la interfaz en `src/clipperkick/ui.py`. Las decisiones de estructura se documentan en `docs/plans/`.
+La elección y el harness del reproductor están en
+[`docs/playback-spike.md`](docs/playback-spike.md).
 
 ## Versiones y contribuciones
 

@@ -79,6 +79,18 @@ class FronterasArquitecturaTests(unittest.TestCase):
         self.assertIn("crear_caso_de_uso_compatibilidad", ui)
         self.assertNotIn("Motor(", ui)
 
+    def test_viewmodels_desktop_no_importan_qt_ni_adaptadores_concretos(self):
+        for ruta in (RAIZ / "desktop" / "viewmodels").rglob("*.py"):
+            destinos = destinos_importados(ruta, ruta.read_text(encoding="utf-8"))
+            for prohibido in ("PySide6", "sqlite3", "subprocess", "clipperkick.infrastructure"):
+                self.assertFalse(any(destino == prohibido or destino.startswith(prohibido + ".")
+                                     for destino in destinos), f"{ruta}: {prohibido}")
+
+    def test_las_dos_entradas_desktop_coexisten(self):
+        pyproject = (RAIZ.parents[1] / "pyproject.toml").read_text(encoding="utf-8")
+        self.assertIn('clipperkick = "clipperkick.ui:main"', pyproject)
+        self.assertIn('clipsapp = "clipperkick.desktop.app:main"', pyproject)
+
 
 class ResolverImportsTests(unittest.TestCase):
     def ruta(self, relativa: str) -> Path:
