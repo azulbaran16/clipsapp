@@ -10,7 +10,8 @@ import threading
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 
-from .engine import ES_WINDOWS, ErrorAmigable, Motor
+from .domain import ErrorAmigable, SolicitudClips
+from .engine import ES_WINDOWS, crear_caso_de_uso_compatibilidad
 
 
 RAIZ_PROYECTO = Path(__file__).resolve().parents[2]
@@ -235,17 +236,13 @@ class App(tk.Tk):
         nombre: str,
         logo: str,
     ) -> None:
-        motor = Motor(lambda mensaje: self.cola.put(("log", mensaje)))
+        caso_de_uso = crear_caso_de_uso_compatibilidad(
+            lambda mensaje: self.cola.put(("log", mensaje))
+        )
         try:
-            listos = motor.procesar(
-                entrada,
-                numero_clips,
-                duracion,
-                salida,
-                vertical,
-                hd,
-                nombre,
-                logo,
+            listos = caso_de_uso.procesar(
+                SolicitudClips(entrada, numero_clips, duracion, salida, vertical,
+                               hd, nombre, logo)
             )
             self.cola.put(("fin", (salida, len(listos))))
         except ErrorAmigable as error:
